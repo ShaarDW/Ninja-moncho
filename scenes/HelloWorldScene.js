@@ -16,28 +16,14 @@ export default class HelloWorldScene extends Phaser.Scene {
 
   preload() {
     // load assets
-    this.load.image("sky", "./assets/space3.png");
-    this.load.image("logo", "./assets/phaser3-logo.png");
-    this.load.image("red", "./assets/particles/red.png");
+  
   }
 
   create() {
     // create game objects
-    this.add.image(400, 300, "sky");
 
-    const logo = this.physics.add.image(400, 100, "logo");
-    logo.setVelocity(100, 200);
-    logo.setBounce(1, 1);
-    logo.setCollideWorldBounds(true);
 
-    // emmit particles from logo
-    const emitter = this.add.particles(0, 0, "red", {
-      speed: 100,
-      scale: { start: 1, end: 0 },
-      blendMode: "ADD",
-    });
 
-    emitter.startFollow(logo);
   }
 
   update() {
